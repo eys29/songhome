@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Elise Song</title>
+  <link rel="stylesheet" type="text/css" href="styles/songhome.css" media="all"/>
+</head>
+<body>
+  <a href="projects.html">songhome</a>
+  <h1 id="os">operating systems</h1>
+
+  <div id="fat" class="desc col" >
+    <h3>File System: Fat Allocation Table (FAT)</h3>
+    <div class="row">
+      <p style="width:400px; margin: 10px 0px 10px 25px">
+        I implemented a virtual block store (VBS), practicing <em>one-to-many virtualization</em> of the disk 
+        by giving the illusion that there are multiple virtual disks for use by the OS and user applications with just one physical disk.
+        I developed the read and write operations that modify the blocks in memory.
+        A file system manages a disk by partitioning its blocks. 
+        The first block is the superblock which stores metadata for the file system such as the free list. 
+        The next blocks contain the inode table which stores the metadata for each VBS operation. 
+        It is followed by the FAT table with FAT entries corresponding to the number of data blocks. 
+        The freelist in the superblock maintains a linked list of free FAT entries.
+        Each VBS is organized as a linked list of FAT entries where each FAT entry points to the next entry. 
+        Finally, the data blocks store the actual data of each VBS. 
+        Shown below, is the partitioning of the physical disk. 
+        To the right, File Allocation Table corresponding to data blocks.
+
+      </p>
+      <img src="images/projects/fat2.png" style="width:225px;margin:10px 25px 0px;"/>
+    </div>
+    <img src="images/projects/fat.png" style="width:650px;margin:10px 25px 25px;"/>  
+  </div>
+  <div id="raid" class="desc col">
+    <h3>Block Interface: Redundant Array of Inexpensive Disks (RAID4)</h3>
+    <img src="images/projects/raid2.png" style="width:650px;margin:10px 25px;"> 
+    <p style="margin: 10px 25px">
+      I developed the software layer between the file system above and the disk driver below.
+      I implemented read and write algorithms for a RAID4 layout.
+      RAID stripes data accross multiple physical disks and 
+      RAID4 provides the illusion of a single virtual disk with fault tolerance, 
+      meaning that if one of the physical disks fail, the virtual disk can still function as normal.
+      Fault tolerance is possible through a parity disk that holds the XOR of data disks.
+      If one of the disks fail, its value can be reconstructed by XOR-ing the rest of the disks.
+      The restorative property of parity is shown below. 
+      <em>D<sub>1</sub>...D<sub>N-1</sub></em> represent data disks and
+      <em>D<sub>N</sub></em> is the parity disk. 
+      This project practiced the technique of <em>many-to-one virtualization</em>.
+    </p>
+    <div class="row">
+      <img src="images/projects/raid.png" style="width:312px; height:180px;margin:10px 25px;"/>
+      <img src="images/projects/raid3.png" style="width:312px; height:180px;margin:10px 25px 25px 0px;"/>
+    </div>
+  </div>
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear() );</script> Elise Song
+  </footer>
+</body>
+
+
+</html>
