@@ -23,19 +23,21 @@ body{
 
 footer{
   margin-top:auto;
+  margin-bottom: 25px;
 }
+img {
+  border-radius: 2%;
 
+}
 .intro img{
   width: 400px;
   margin-top:25px;
-  border-radius: 2%;
 
 }
 
 .art img{
   width: 400px;
-  margin: 25px;
-  border-radius: 2%;
+  margin: 0px 25px 25px 0px;
 
 }
 
@@ -56,7 +58,7 @@ h1{
   background-clip: text;
   color: transparent;
   font-size:100px;
-  margin: 0px;
+  margin: 0px 0px 25px;
 }
 
 h3{
@@ -86,14 +88,14 @@ h3{
 .project, .desc{
   width: 350px;
   height: 325px;
-  margin: 25px;
+  margin: 0px 25px 25px 0px;
   background-color: var(--back);
   border-radius: 2%;
 }
 
 .desc {
   display: flex;
-  width: 700px;
+  width: 725px;
   height:auto;
 }
 
@@ -114,7 +116,6 @@ h3{
   width: 300px;
   height: 225px;
   margin: 25px 25px 10px;
-  border-radius: 2%;
 }
 
 .project p{
@@ -147,13 +148,11 @@ a:hover{
     flex-direction: column-reverse;
   }
 
-  h1{
-    font-size: 80px;
+  h1, #arch, #os, #projects{
+    font-size: 65px;
   }
 
-  .intro img{
-    margin-bottom: 25px;
-  }
+ 
 
   .pinfo, .intro {
     width: 75vw;
@@ -174,30 +173,51 @@ a:hover{
   body{
     width: 80vw;
     margin:auto;
+    margin-top:25px;
+
   }
   .intro{
     display: flex;
     flex-direction: column-reverse;
   }
-  h1, #arch, #os{
-    font-size: 50px;
+  h1, #arch, #os, #projects{
+    font-size: 45px;
+    width: 80vw;
   }
+  
 
   .intro img{
     width:80vw;
-    margin-bottom: 25px;
-    margin-top:50px;
+    margin-top: 0px;
+  }
+
+  .art img {
+    width:80vw;
   }
 
   .pinfo, .intro {
     width: 80vw;
   }
-  .desc{
-    width: 400px;
-  }
+ 
 
   .desc p, .desc img{
     width: 350px;
   }
   
+  .project, .desc{
+    width: 80vw;
+    height: auto;
+    margin-right: 0px;
+  }
+
+  .project img, .desc img, .project p, .desc p{
+    width: calc(80vw - 50px);
+    height: auto;
+  }
+
+  .project p {
+    padding-bottom: 25px;
+  }
+
+
 } 
