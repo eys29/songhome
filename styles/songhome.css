@@ -151,6 +151,11 @@ a:hover{
     font-size: 65px;
   }
 
+  .pinfo h1 {
+    font-size: 85px;
+    width: 90vw;
+  }
+
  
 
   .pinfo, .intro {
