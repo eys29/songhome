@@ -12,9 +12,9 @@
   <h1 id="os">operating systems</h1>
 
   <div id="fat" class="desc col" >
-    <h3>File System: Fat Allocation Table (FAT)</h3>
+    <h3>File System: File Allocation Table (FAT)</h3>
     <div class="row">
-      <p style="width:400px; margin: 10px 0px 10px 25px">
+      <p style="margin: 10px 0px 10px 25px">
         I implemented a virtual block store (VBS), practicing <em>one-to-many virtualization</em> of the disk 
         by giving the illusion that there are multiple virtual disks for use by the OS and user applications with just one physical disk.
         I developed the read and write operations that modify the blocks in memory.
@@ -26,16 +26,16 @@
         Each VBS is organized as a linked list of FAT entries where each FAT entry points to the next entry. 
         Finally, the data blocks store the actual data of each VBS. 
         Shown below, is the partitioning of the physical disk. 
-        To the right, File Allocation Table corresponding to data blocks.
+        On the right is the File Allocation Table corresponding to the data blocks.
 
       </p>
       <img src="images/projects/fat2.png" style="width:225px;margin:10px 25px 0px;"/>
     </div>
-    <img src="images/projects/fat.png" style="width:650px;margin:10px 25px 25px;"/>  
+    <img src="images/projects/fat.png" style="max-width:650px;margin:10px 25px 25px;"/>  
   </div>
   <div id="raid" class="desc col">
     <h3>Block Interface: Redundant Array of Inexpensive Disks (RAID4)</h3>
-    <img src="images/projects/raid2.png" style="width:650px;margin:10px 25px;"> 
+    <img src="images/projects/raid2.png" style="max-width:650px;margin:10px 25px;"> 
     <p style="margin: 10px 25px">
       I developed the software layer between the file system above and the disk driver below.
       I implemented read and write algorithms for a RAID4 layout.
