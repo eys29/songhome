@@ -28,11 +28,15 @@ footer{
 .intro img{
   width: 400px;
   margin-top:25px;
+  border-radius: 2%;
+
 }
 
 .art img{
   width: 400px;
   margin: 25px;
+  border-radius: 2%;
+
 }
 
 .intro{
@@ -151,7 +155,7 @@ a:hover{
     margin-bottom: 25px;
   }
 
-  .pinfo {
+  .pinfo, .intro {
     width: 75vw;
   }
   .desc{
@@ -175,7 +179,7 @@ a:hover{
     display: flex;
     flex-direction: column-reverse;
   }
-  h1{
+  h1, #arch, #os{
     font-size: 50px;
   }
 
@@ -185,7 +189,7 @@ a:hover{
     margin-top:50px;
   }
 
-  .pinfo {
+  .pinfo, .intro {
     width: 80vw;
   }
   .desc{
